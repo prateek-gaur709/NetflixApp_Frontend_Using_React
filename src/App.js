@@ -1,24 +1,55 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Card from './Card';
+import Heading from './Heading';
+import Sdata from './Sdata';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Heading />
+      {/* <Card
+        title={Sdata[0].title}
+        imgsrc={Sdata[0].imgsrc}
+        category={Sdata[0].category}
+        link={Sdata[0].link}
+      />
+      <Card
+        title={Sdata[1].title}
+        imgsrc={Sdata[1].imgsrc}
+        category={Sdata[1].category}
+        link={Sdata[1].link}
+      />
+      <Card
+        title={Sdata[2].title}
+        imgsrc={Sdata[2].imgsrc}
+        category={Sdata[2].category}
+        link={Sdata[2].link}
+      />
+      <Card
+        title={Sdata[3].title}
+        imgsrc={Sdata[3].imgsrc}
+        category={Sdata[3].category}
+        link={Sdata[3].link}
+      />
+      <Card
+        title={Sdata[4].title}
+        imgsrc={Sdata[4].imgsrc}
+        category={Sdata[4].category}
+        link={Sdata[4].link}
+      /> */}
+      {Sdata.map((val, idx, arr) => {
+        return (
+          <Card
+            key={val.id}
+            title={val.title}
+            imgsrc={val.imgsrc}
+            category={val.category}
+            link={val.link}
+          />
+        );
+      })}
+    </>
   );
 }
 
